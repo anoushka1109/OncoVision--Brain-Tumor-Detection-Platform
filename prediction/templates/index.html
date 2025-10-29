@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><center>Brain Tumor Detection</center></title>
+</head>
+<body>
+    <h1>Brain Tumor Detection</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Upload MRI Scan Image:</label>
+        <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
+        <br>
+        <button type="submit">Detect Tumor</button>
+    </form>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,Arial;
+    }
+
+    header, footer {
+      position: fixed;
+      width: 100%;
+      background-color: #000000;
+      color: rgb(236, 231, 231);
+      padding: 10px;
+    }
+
+    header {
+      top: 0;
+      text-align: center;
+    }
+
+    footer {
+      bottom: 0;
+    }
+
+    main {
+      margin-top: 60px; 
+      margin-bottom: 60px; 
+      padding: 20px;
+      background: url("bg.jpeg");
+      background-image: "bg.jpeg";
+      background-size: cover;
+      min-height: calc(100vh - 120px); 
+      box-sizing: border-box;
+    }
+
+    .center-container {
+      width: 40%;
+      height: 50%;
+      margin: 0 auto; 
+      padding: 20px;
+      box-shadow: 0 0 10px ;
+    }
+
+    .header_design{
+      box-shadow: 0 0 10px;
+      width: 60%;
+      align-items: center;
+
+    }
+  </style>
+  <title>Sticky Header and Footer</title>
+</head>
+<body style="background:url('bg.jpeg');">
+
+  <header>
+    <center>
+      <div class="header_design">
+          <h1>Brain Tumor Detection</h1>
+      </div>
+    </center>
+  </header>
+
+  <main>
+    <div class="center-container">
+        <center>
+            <h1>Insert Image Below</h1>
+        </center>
+        <center>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <br>
+                  <input class="form-control" type="file" name="file" accept=".jpg, .png, .jpeg" required>
+                </div>
+                <button type="submit" class="btn btn-success">Detect Tumor</button>
+            </form>
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+        </center>
+    </div>
+  </main>
+
+  <footer>
+    <p>.</p>
+  </footer>
+
+</body>
+</html>
+
